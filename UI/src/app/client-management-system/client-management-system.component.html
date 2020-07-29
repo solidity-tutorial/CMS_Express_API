@@ -1,0 +1,54 @@
+<div>
+    <h1 style="text-align: center;">{{title}}</h1>
+    <br>
+    <table class="table">
+        <thead>
+            <th scope="col">
+                <input type="text" class="form-control" placeholder="Enter Id" ng-model="clientList.id" >
+            </th>
+            <th scope="col">
+                <input type="text" class="form-control" placeholder="Enter Name" ng-model="clientList.name" >
+            </th>
+            <th scope="col">
+                <input type="text" name="address" class="form-control" placeholder="Enter Address" ng-model="clientList.address" >
+            </th>
+            <th scope="col">
+                <input type="text" name="phoneNumber" class="form-control" placeholder="Enter PhoneNumber" ng-model="clientList.phoneNumber"  >
+            </th>
+            <th scope="col">
+                <input type="text" name="email" class="form-control" placeholder="Enter Email" ng-model="clientList.email"  >
+            </th>
+            <th scope="col">
+                <input type="button" value="add" class="form-control" ng-click="addClient()">
+            </th>
+            <th scope="col">
+                <input type="button" value="update" class="form-control" ng-click="updateClient()">
+            </th>
+            <th scope="col">
+                <input type="button" value="retrieveAll" class="form-control" ng-click="retrieveAll()">
+            </th>
+        </thead>
+    </table>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">PhoneNumber</th>
+            <th scope="col">Email</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+         <tr ng-repeat = "client in dataList">
+            <th scope="row">{{client.id}}</th>
+            <td>{{client.name}}</td>
+            <td>{{client.address}}</td>
+            <td>{{client.phoneNumber}}</td>
+            <td>{{client.email}}</td>
+            <td> <a href="#" ng-click="deleteClient(client)">delete</a></td>
+          </tr>
+        </tbody>
+      </table>
+</div>   
